@@ -1,10 +1,10 @@
 import gymnasium as gym
 import torch
 import numpy as np
-from CartPole import DQNModel  # Import the model class from your training file
+from CartPole import DQNModel  # Only import the model class
 
 # Create environment
-env = gym.make('CartPole-v1', render_mode='human').env
+env = gym.make('CartPole-v1', render_mode='human')
 state, _ = env.reset()
 
 # Create model and load trained weights

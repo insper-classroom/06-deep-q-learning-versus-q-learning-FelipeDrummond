@@ -20,6 +20,9 @@ print('Action space: ', env.action_space)
 # Create results directory if it doesn't exist
 os.makedirs('results', exist_ok=True)
 
+# Create data directory if it doesn't exist
+os.makedirs('data', exist_ok=True)
+
 # Define the PyTorch model
 class DQNModel(nn.Module):
     def __init__(self, input_dim, output_dim):
