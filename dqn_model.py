@@ -5,9 +5,7 @@ class DQNModel(nn.Module):
         self.network = nn.Sequential(
             nn.Linear(input_dim, 512),
             nn.Tanh(),
-            nn.Linear(512, 256),
-            nn.ReLU(),
-            nn.Linear(256, output_dim)
+            nn.Linear(512, output_dim)
         )
     
     def forward(self, x):
