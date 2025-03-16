@@ -29,7 +29,7 @@ gamma = 0.99
 epsilon = 1.0
 epsilon_min = 0.01
 epsilon_dec = 0.995
-episodes = 200
+episodes = 1000
 batch_size = 32
 memory = deque(maxlen=10000)
 max_steps = 1000
@@ -64,6 +64,9 @@ for run in range(n_runs):
 df_rewards['Rolling_Average'] = df_rewards.groupby('Run')['Reward'].transform(
     lambda x: x.rolling(window=window_size, min_periods=1).mean()
 )
+
+# Save the DataFrame
+df_rewards.to_csv('results/dqn_results.csv', index=False)
 
 plt.figure(figsize=(12, 6))
 sns.lineplot(data=df_rewards, x='Episode', y='Rolling_Average', 
